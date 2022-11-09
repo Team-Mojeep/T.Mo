@@ -50,6 +50,4 @@ export const GoLogin = styled.button`
   @media screen and (max-width: 670px) {
     font-size: 37px;
   }
-  > img {
-  }
 `;
