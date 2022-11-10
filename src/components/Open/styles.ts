@@ -3,8 +3,10 @@ import { MainColor } from "../../styles";
 
 export const Background = styled.div`
   display: flex;
+  width: 100vw;
   height: 100vh;
   background: ${MainColor};
+  gap: 100px;
   > img {
     width: 25%;
     height: 70%;
@@ -22,6 +24,9 @@ export const Text = styled.div`
   font-weight: 800;
   width: 610px;
   margin: 8%;
+  >a{
+    text-decoration: none;
+  }
   @media screen and (max-width: 850px) {
     font-size: 64px;
   }
