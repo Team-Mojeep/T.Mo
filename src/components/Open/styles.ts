@@ -6,17 +6,23 @@ export const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background: ${MainColor};
-  gap: 100px;
-  > img {
-    width: 25%;
-    height: 70%;
-    margin: 110px;
-    @media screen and (max-width: 1500px) {
+  display: flex;
+  gap: 302px;
+  justify-content: center;
+  align-items: center;
+  >img{
+    width: 482.59px;
+    height: 692px;
+   @media screen and (max-width: 1500px) {
       display: none;
     }
   }
 `;
 export const Text = styled.div`
+  min-width: 785px;
+  font-weight: 600;
+  font-size: 90px;
+  color: white;
   display: flex;
   flex-direction: column;
   font-size: 70px;
