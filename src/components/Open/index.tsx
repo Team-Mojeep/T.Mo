@@ -1,4 +1,4 @@
-import * as S from "./styles2";
+import * as S from "./styles";
 import { OpenLogo } from "../../assets";
 import { Link } from "react-router-dom";
 import { RightArrow } from "../../assets";
