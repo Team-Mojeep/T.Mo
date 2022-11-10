@@ -42,4 +42,4 @@ export const GoLogin = styled.button`
   align-items: center;
   gap: 15px;
   margin-top: 82px;
-`;
+`
