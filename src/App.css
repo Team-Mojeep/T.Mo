@@ -1,3 +1,13 @@
 .App {
   margin: 0;
 }
+
+@font-face {
+  font-family: "NotoSans-SemiBold";
+  src: url(../src/assets/fonts/NotoSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "NotoSans-medium";
+  src: url(../src/assets/fonts/NotoSans-Medium.ttf);
+}
