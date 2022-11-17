@@ -11,9 +11,16 @@ export const Container = styled.div`
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 72px;
+  ::-webkit-scrollbar{
+    width: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${MainColor};
+    border-radius: 10px;
+  }
 `;
 export const ProjectName = styled.div`
   font-weight: 600;
