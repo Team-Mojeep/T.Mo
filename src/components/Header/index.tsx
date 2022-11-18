@@ -1,7 +1,8 @@
 import * as S from "./styles";
 import { Logo } from "../../assets";
 import { getAccessToken } from "../../utils/Token";
-import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 
 function Header(): JSX.Element {
   const accessToken = getAccessToken();
@@ -17,8 +18,12 @@ function Header(): JSX.Element {
           </S.Btns>
           :
           <S.Btns>
-            <S.Btn>Login</S.Btn>
-            <S.Btn>Signup</S.Btn>
+            <Link to="/Login" style={{textDecoration: "none"}}>
+              <S.Btn>Login</S.Btn>
+            </Link>
+            <Link to="/Signup" style={{textDecoration: "none"}}>
+              <S.Btn>Signup</S.Btn>
+            </Link>
           </S.Btns>
         }
       </S.Wrapper>

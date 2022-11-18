@@ -14,7 +14,7 @@ function Open(): JSX.Element {
         <br />
         관리하세요.
         <br />
-        <Link to="/login">
+        <Link to="/Login">
           <S.GoLogin>
             Get started now <img src={RightArrow} />
           </S.GoLogin>

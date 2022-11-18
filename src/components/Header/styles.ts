@@ -14,10 +14,10 @@ export const Btns = styled.div`
   font-size: 36px;
   display: flex;
   gap: 124px;
-  color: ${SubColor};
 `;
 export const Btn = styled.span`
   :hover{
     color: ${MainColor};
   }
+  color: ${SubColor};
 `;
