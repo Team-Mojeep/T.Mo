@@ -1,63 +1,67 @@
-import styled from "styled-components";
+import { PropsWithChildren, ReactNode } from "react";
+import * as S from "./styles";
 
-////Modal
-export const ModalContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-`;
+interface ModalDefaulType {
+  onClickToggleModal: () => void;
+}
 
-export const DialogBox = styled.dialog`
-  width: 662px;
-  height: 497px;
-  margin-top: -200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 0 30px rgba(30, 30, 30, 0.185);
-  box-sizing: border-box;
-  background-color: white;
-  z-index: 10000;
-  padding: 62px;
-`;
+type Props = {
+  onClickToggleModal: () => void;
+  children?: ReactNode;
+  width?: string;
+  height?: string;
+};
 
-export const Backdrop = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.2);
-`;
+function Modal({ onClickToggleModal, children, width, height }: Props) {
+  return (
+    <S.ModalContainer>
+      <S.BackdropBtn>X</S.BackdropBtn>
+      <S.DialogBox style={{ width, height }}>
+        <S.BackdropBtn
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
 
-export const BackdropBtn = styled.button`
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 30px;
-  background-color: white;
-  border: none;
-  color: #d9d9d9;
-  margin: 0;
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  cursor: pointer;
-  &:hover {
-    color: black;
-  }
-`;
+            if (onClickToggleModal) {
+              onClickToggleModal();
+            }
+          }}
+        >
+          X
+        </S.BackdropBtn>
+        <S.Children>{children}</S.Children>
+      </S.DialogBox>
+      <S.Backdrop
+        onClick={(e: React.MouseEvent) => {
+          e.preventDefault();
 
-export const Children = styled.div`
-  width: 538px;
-  height: 372px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+          if (onClickToggleModal) {
+            onClickToggleModal();
+          }
+        }}
+      />
+    </S.ModalContainer>
+  );
+}
+
+export default Modal;
+
+/*
+// 컴포넌트에 이렇게 적용
+const [isOpenModal, setOpenModal] = useState<boolean>(false);
+const OnClickToggleModal = useCallback(() => {
+  setOpenModal(!isOpenModal);
+}, [isOpenModal]);
+return(
+  {isOpenModal && (
+    <Modal onClickToggleModal={OnClickToggleModal}>
+    여기에 내용이 들어가도록 만들기
+    </Modal>
+  )}
+)
+
+
+//modal size 지정하고 싶은 경우
+<Modal onClickToggleModal={OnClickToggleModal} width="123px" height="123px">
+    너비와 높이를 지정하는 예시 코드입니다.
+</Modal>
+*/
