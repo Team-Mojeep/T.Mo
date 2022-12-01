@@ -17,8 +17,8 @@ function App(): JSX.Element {
         <Route element={<Header />}>
           {/* 헤더가 들어가야 하는 페이지들은 여기에 넣어주세요 :) */}
           <Route path="/applicationlist" element={<ApplicationListPage />} />
-          <Route path="/Login" element={<LoginPage />} />
-          <Route path="/Signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/main" element={<MainPage />} />
         </Route>
       </Routes>

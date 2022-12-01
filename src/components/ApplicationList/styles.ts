@@ -4,7 +4,7 @@ import { COLOR, MainColor } from "../../styles";
 export const Container = styled.div`
   width: 888px;
   height: 600px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 2px solid ${MainColor};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: absolute;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 72px;
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     width: 9px;
   }
   ::-webkit-scrollbar-thumb {
@@ -46,10 +46,10 @@ export const Title = styled.div`
   font-weight: 700;
   width: 647px;
 `;
-export const Application = styled.div`
+export const Box = styled.div`
   width: 647px;
   height: 82px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 2px solid ${MainColor};
   border-radius: 10px;
   display: flex;
