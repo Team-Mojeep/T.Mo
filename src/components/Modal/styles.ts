@@ -8,7 +8,7 @@ export const ModalContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
-  `;
+`;
 
 export const DialogBox = styled.dialog`
   width: 662px;
