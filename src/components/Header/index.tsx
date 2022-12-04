@@ -13,8 +13,12 @@ function Header(): JSX.Element {
         <img src={Logo} />
         {accessToken ?
           <S.Btns>
-            <S.Btn>Mypage</S.Btn>
-            <S.Btn>Logout</S.Btn>
+            <Link to="/Login" style={{textDecoration: "none"}}>
+              <S.Btn>Mypage</S.Btn>
+            </Link>
+            <Link to="/Signup" style={{textDecoration: "none"}}>
+              <S.Btn>Logout</S.Btn>
+            </Link>
           </S.Btns>
           :
           <S.Btns>
