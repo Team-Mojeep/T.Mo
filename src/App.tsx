@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
 import MainPage from "./pages/MainPage";
 import ApplicationListPage from "./pages/ApplicationListPage";
+import ProjectPage from "./pages/ProjectPage";
 import WritePage from "./pages/WritePage";
 import MyPage from "./pages/MyPage";
 
@@ -22,6 +23,7 @@ function App(): JSX.Element {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/main" element={<MainPage />} />
+          <Route path="/project" element={<ProjectPage />} />
           <Route path="/write" element={<WritePage />} />
           <Route path="/mypage" element={<MyPage/>}/>
         </Route>
