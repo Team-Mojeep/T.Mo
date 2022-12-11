@@ -10,6 +10,8 @@ import ApplicationListPage from "./pages/ApplicationListPage";
 import ProjectPage from "./pages/ProjectPage";
 import WritePage from "./pages/WritePage";
 import MyPage from "./pages/MyPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import PortfolioDetailPage from "./pages/PortfolioDetailPage";
 
 function App(): JSX.Element {
   return (
@@ -26,6 +28,8 @@ function App(): JSX.Element {
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/write" element={<WritePage />} />
           <Route path="/mypage" element={<MyPage/>}/>
+          <Route path="/portfolio" element={<PortfolioPage/>}/>
+          <Route path="/portfoliodetail" element={<PortfolioDetailPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
