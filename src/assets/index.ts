@@ -10,4 +10,3 @@ export { default as EmptyStar } from "./imgs/EmptyStar.svg";
 export { default as FullStar } from "./imgs/FullStar.svg";
 export { default as PortfolioGo } from "./imgs/portfoliogo.svg";
 export { default as SelectBoxArrow } from "./imgs/SelectBoxArrow.png";
-export { default as PortfolioGo } from "./imgs/portfoliogo.svg";
