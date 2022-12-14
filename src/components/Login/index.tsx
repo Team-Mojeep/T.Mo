@@ -6,7 +6,7 @@ import { AuthType } from "../../interface";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = "https://192.168.167.105";
+const BASE_URL = "http://192.168.167.105:8080";
 
 function Login(): JSX.Element {
   const [isSecret, setIsSecret] = useState<boolean>(false);
@@ -31,23 +31,25 @@ function Login(): JSX.Element {
     });
   };
 
-  const login = async () => {
-    await axios
-      .post(`${BASE_URL}/user/login`, {
+  const onLogin = () => {
+    console.log(email, password);
+    axios({
+      method: "post",
+      url: `${BASE_URL}/user/login`,
+      data: {
         email: email,
         password: password,
+      },
+    })
+      .then(function (response) {
+        console.log("성공");
+        console.log(response.data.accessToken);
       })
-      .then((res) => {
-        localStorage.setItem("t_mo_access_token", res.data.accessToken);
+      .catch(function (error) {
+        if (error.response.status === 400) {
+          console.log(error.response);
+        } else console.log(error.response);
       });
-  };
-
-  const onLogin = () => {
-    try {
-      login();
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (

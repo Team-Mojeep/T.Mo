@@ -7,7 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Major } from "../My/styles";
 
-const BASE_URL = "http://10.156.147.118:8080";
+const BASE_URL = "http://192.168.167.105:8080";
 
 function Signup(): JSX.Element {
   return (
@@ -51,25 +51,54 @@ function SignupInputs(): JSX.Element {
     });
   };
 
-  const signup = async () => {
-    await axios.post(`${BASE_URL}/user/signup`, {
-      name: name,
-      password: password,
-      grade: grade,
-      email: email,
-      majorType: major,
-    });
-  };
+  // const signup = async () => {
+  //   axios({
+  //     method: "post",
+  //     url: `${BASE_URL}/user/login`,
+  //     data: {
+  //       name: name,
+  //       password: password,
+  //       grade: grade,
+  //       email: email,
+  //       majorType: major,
+  //     },
+  //   })
+  //     .then(function (response) {
+  //       console.log("성공");
+  //     })
+  //     .catch(function (error) {
+  //       if (error.response.status === 400) {
+  //         console.log(error.response.status);
+  //       } else alert(`오류 (${error.response.status})`);
+  //     });
+  // };
 
   const onSignup = async () => {
+    console.log(name);
+    console.log(password);
+    console.log(grade);
+    console.log(email);
     console.log(major);
     if (password === checkPassword) {
-      try {
-        await signup();
-      } catch (error: any) {
-        console.log(error);
-        // if (error.response.data.status === 400) alert("존재하는 아이디입니다.");
-      }
+      axios({
+        method: "post",
+        url: `${BASE_URL}/user/signup`,
+        data: {
+          name: name,
+          password: password,
+          grade: grade,
+          email: email,
+          majorType: major,
+        },
+      })
+        .then(function (response) {
+          console.log("성공");
+        })
+        .catch(function (error) {
+          if (error.response.status === 400) {
+            console.log(error.response);
+          } else console.log(error.response);
+        });
     } else {
       alert("비밀번호가 일치하지 않습니다.");
     }
@@ -98,10 +127,10 @@ function SignupInputs(): JSX.Element {
         )}
       </S.Eyes>
       <S.selectbox onChange={(e: any) => setMajor(e.target.value)}>
-        <S.option>Web</S.option>
-        <S.option>App</S.option>
-        <S.option>Game</S.option>
-        <S.option>etc</S.option>
+        <S.option value="WEB">Web</S.option>
+        <S.option value="APP">App</S.option>
+        <S.option value="GAME">Game</S.option>
+        <S.option value="ECT">etc</S.option>
       </S.selectbox>
       <S.GoBtn onClick={onSignup}>Go</S.GoBtn>
     </>
