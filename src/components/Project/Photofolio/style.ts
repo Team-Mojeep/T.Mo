@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { MainColor } from "../../../styles";
 import Main from "../../Main";
 
-export const Wrapper = styled.form`
+export const Wrapper = styled.div`
   display: flex;
   width: 90%;
   flex-direction: column;

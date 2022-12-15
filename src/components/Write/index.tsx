@@ -22,10 +22,8 @@ function Write(): JSX.Element {
   };
 
   const deleteSkill = (index: number) => {
-    console.log(skill[index]);
     let filtered = skill.filter((element) => element !== skill[index]);
     setSkill(filtered);
-    console.log(skill);
   };
 
   // type Information = {
