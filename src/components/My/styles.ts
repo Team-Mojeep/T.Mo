@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { MainColor } from '../../styles';
 import {SubColor} from '../../styles'
-import { COLOR } from '../../styles';
 
 export const FlexWrapper = styled.div`
     display: flex;
@@ -120,4 +119,39 @@ export const Line = styled.div`
 export const TagAddModal = styled.div`
     color:#808080;
     width: 1000px;
+`;
+
+export const ModalFlex = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
+
+export const TagAdd = styled.div`
+    font-size: 24px;
+    font-weight: bold;
+`;
+
+export const TagAddInput = styled.input`
+    width: 450px;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding-left: 20px;
+    outline: none;
+    margin-top: 30px;
+`;
+
+export const TagAddBtn = styled.button`
+    margin-top: 100px;
+    width: 310px;
+    height: 60px;
+    color: white;
+    background-color: ${MainColor};
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
 `;

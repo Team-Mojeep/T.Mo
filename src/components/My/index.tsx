@@ -13,11 +13,19 @@ function My(): JSX.Element{
     setOpenModal(!isOpenModal);
     }, [isOpenModal]);
 
+    function AddTag(){
+        
+    }
+
     return(
         <>
             {isOpenModal && (                            
                 <Modal onClickToggleModal={OnClickToggleModal}>
-
+                    <S.ModalFlex>
+                        <S.TagAdd>기술 스택 추가하기</S.TagAdd>
+                        <S.TagAddInput placeholder="기술 추가" />
+                        <S.TagAddBtn onClick={AddTag}>추가 하기</S.TagAddBtn>
+                    </S.ModalFlex>
                 </Modal>
                 )}
             <S.FlexWrapper>

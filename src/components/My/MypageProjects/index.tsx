@@ -90,7 +90,9 @@ function Project(){
                     );
                 })}
                 <S.ProjectPlusWarpper>
-                    <S.ProjectPlus src={plus}/>
+                    <Link to="/write">
+                        <S.ProjectPlus src={plus}/>
+                    </Link>
                 </S.ProjectPlusWarpper>
             </S.ProjectWarpper>
             
