@@ -52,10 +52,6 @@ function Login(): JSX.Element {
       })
       .then((res:any) => {
         localStorage.setItem("t_mo_access_token", res.data.accessToken);
-      .catch(function (error) {
-        if (error.response.status === 400) {
-          console.log(error.response);
-        } else console.log(error.response);
       });
   };
 
