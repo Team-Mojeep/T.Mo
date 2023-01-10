@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     margin-top: 50px;
     width: 500px;
     height: 700px;
-    box-shadow: 0 4px 4px #67A2E7;
+    box-shadow: 0 4px 4px ${MainColor};
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -80,4 +80,13 @@ export const Eyes = styled.div`
     display: flex;
     flex-direction: column;
     gap: 54px;
+`;
+
+export const Mail = styled.div`
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: ${MainColor};
+    right: 790px;
+    top: 520px;
 `;

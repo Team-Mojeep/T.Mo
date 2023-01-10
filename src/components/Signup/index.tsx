@@ -4,8 +4,6 @@ import { Eyeoff } from "../../assets";
 import { useState } from "react";
 import { AuthType } from "../../interface";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Major } from "../My/styles";
 
 const BASE_URL = "http://192.168.167.105:8080";
 
@@ -126,6 +124,7 @@ function SignupInputs(): JSX.Element {
           <img onClick={() => setIsCheckSecret(!isCheckSecret)} src={Eyeoff} />
         )}
       </S.Eyes>
+      <S.Mail>@dsm.hs.kr</S.Mail>
       <S.selectbox onChange={(e: any) => setMajor(e.target.value)}>
         <S.option value="WEB">Web</S.option>
         <S.option value="APP">App</S.option>
@@ -133,6 +132,7 @@ function SignupInputs(): JSX.Element {
         <S.option value="ECT">etc</S.option>
       </S.selectbox>
       <S.GoBtn onClick={onSignup}>Go</S.GoBtn>
+          
     </>
   );
 }
