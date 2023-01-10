@@ -2,9 +2,14 @@ import * as S from "./styles";
 import { useState } from "react";
 import { Eye } from "../../assets";
 import { Eyeoff } from "../../assets";
-import { AuthType } from "../../interface";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+interface AuthType {
+    title: string;
+    type: string;
+    name: string;
+    max?: number;
+  }
 
 const BASE_URL = "http://192.168.167.105:8080";
 
@@ -18,10 +23,10 @@ function Login(): JSX.Element {
   });
   const { email, password } = inputs;
 
-  const Text: AuthType[] = [
-    { title: "Email", type: "text", name: "email" },
-    { title: "Password", type: passwordType, name: "password" },
-  ];
+    const Text : AuthType[] = [
+        {title : "E-mail", type:"text", name: "email"},
+        {title : "Password", type: "passwordType", max:16, name: "password"},
+    ];
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -45,6 +50,8 @@ function Login(): JSX.Element {
         console.log("성공");
         console.log(response.data.accessToken);
       })
+      .then((res:any) => {
+        localStorage.setItem("t_mo_access_token", res.data.accessToken);
       .catch(function (error) {
         if (error.response.status === 400) {
           console.log(error.response);
@@ -62,6 +69,7 @@ function Login(): JSX.Element {
             type={list.type}
             name={list.name}
             onChange={onChange}
+            maxLength={list.max}
           />
         ))}
         <S.GoBtn onClick={onLogin}>Go</S.GoBtn>
@@ -75,6 +83,6 @@ function Login(): JSX.Element {
       </S.Wrapper>
     </S.FlexWrapper>
   );
-}
+};
 
 export default Login;
